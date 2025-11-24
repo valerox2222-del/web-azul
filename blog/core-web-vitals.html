@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Web Vitals: Guía Definitiva 2024 | SEOParaElBaix</title>
+    <meta name="description"
+        content="Aprende a optimizar los Core Web Vitals de tu web. Mejora LCP, FID y CLS para conseguir mejor posicionamiento en Google.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .article-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 150px 0 80px;
+            color: white
+        }
+
+        .article-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem
+        }
+
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem
+        }
+
+        .article-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem
+        }
+
+        .metric-box {
+            background: #fff;
+            border: 2px solid var(--primary);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://wa.me/34640329880" target="_blank" class="whatsapp-float"><i class="fa-brands fa-whatsapp"></i></a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><i class="fa-solid fa-chart-line"></i><a href="index.html"
+                    style="text-decoration:none;color:inherit"><span>SEO<strong>ParaElBaix</strong></span></a></div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contacto" class="btn-nav">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header class="article-header">
+        <div class="container" style="max-width:800px">
+            <h1 class="article-title">Core Web Vitals: Guía Definitiva 2024</h1>
+        </div>
+    </header>
+    <article class="article-content">
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop" alt="Core Web Vitals - Performance" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 2rem;">
+        
+        <p><strong>Google ahora rankea webs basándose en la experiencia del usuario, y los Core Web Vitals son la medida
+                oficial.</strong> Si tu web es lenta o inestable visualmente, estás perdiendo posiciones. En esta guía
+            aprenderás a optimizar las 3 métricas clave que Google evalúa.</p>
+
+        <h2>¿Qué son los Core Web Vitals?</h2>
+        <p>Son 3 métricas que Google usa para medir la experiencia del usuario:</p>
+
+        <div class="metric-box">
+            <h3><i class="fa-solid fa-bolt"></i> LCP - Largest Contentful Paint</h3>
+            <p><strong>Qué mide:</strong> Cuánto tarda en cargar el elemento visual más grande de tu página.</p>
+            <p><strong>Objetivo:</strong> Menos de 2.5 segundos</p>
+            <p><strong>Por qué importa:</strong> Los usuarios abandonan si la página tarda en mostrar contenido.</p>
+        </div>
+
+        <div class="metric-box">
+            <h3><i class="fa-solid fa-hand-pointer"></i> FID - First Input Delay (ahora INP)</h3>
+            <p><strong>Qué mide:</strong> Cuánto tarda tu web en responder cuando el usuario hace click.</p>
+            <p><strong>Objetivo:</strong> Menos de 100 milisegundos</p>
+            <p><strong>Por qué importa:</strong> Una web que no responde frustra al usuario.</p>
+        </div>
+
+        <div class="metric-box">
+            <h3><i class="fa-solid fa-expand"></i> CLS - Cumulative Layout Shift</h3>
+            <p><strong>Qué mide:</strong> Cuánto se mueven los elementos mientras carga la página.</p>
+            <p><strong>Objetivo:</strong> Menos de 0.1</p>
+            <p><strong>Por qué importa:</strong> ¿Alguna vez intentaste hacer click y la página se movió? Eso es CLS
+                alto.</p>
+        </div>
+
+        <h2>Cómo Optimizar LCP (Velocidad de Carga)</h2>
+        <p><strong>1. Optimiza Imágenes</strong></p>
+        <ul>
+            <li>Usa formatos modernos: WebP o AVIF</li>
+            <li>Comprime sin perder calidad: TinyPNG, ImageOptim</li>
+            <li>Implementa lazy loading para imágenes fuera del viewport</li>
+            <li>Usa srcset para servir imágenes según el dispositivo</li>
+        </ul>
+
+        <p><strong>2. Mejora el Servidor</strong></p>
+        <ul>
+            <li>Usa un CDN (Cloudflare, CloudFront)</li>
+            <li>Actualiza a HTTP/3</li>
+            <li>Optimiza TTFB (Time to First Byte) con caché del servidor</li>
+        </ul>
+
+        <p><strong>3. Optimiza el CSS y JavaScript</strong></p>
+        <ul>
+            <li>Minimiza archivos CSS y JS</li>
+            <li>Elimina JavaScript no usado</li>
+            <li>Carga JS de forma asíncrona o defer</li>
+            <li>Inline critical CSS</li>
+        </ul>
+
+        <h2>Cómo Mejorar FID/INP (Interactividad)</h2>
+        <p><strong>Principales culpables del FID alto:</strong></p>
+        <ul>
+            <li><strong>JavaScript pesado:</strong> Divide el código en chunks más pequeños</li>
+            <li><strong>Tareas largas:</strong> Divide procesos grandes en tareas más pequeñas</li>
+            <li><strong>Third-party scripts:</strong> Carga Google Analytics, Facebook Pixel, etc. de forma asíncrona
+            </li>
+        </ul>
+
+        <p><strong>Técnicas de optimización:</strong></p>
+        <ul>
+            <li>Code splitting: carga solo el JS necesario por página</li>
+            <li>Web Workers: mueve operaciones pesadas fuera del thread principal</li>
+            <li>Throttling y debouncing para eventos como scroll</li>
+        </ul>
+
+        <h2>Cómo Reducir CLS (Estabilidad Visual)</h2>
+        <p><strong>Causas comunes de CLS:</strong></p>
+        <ul>
+            <li>Imágenes sin dimensiones especificadas</li>
+            <li>Anuncios que se insertan dinámicamente</li>
+            <li>Fuentes web que causan FOIT/FOUT</li>
+            <li>Contenido inyectado por JavaScript</li>
+        </ul>
+
+        <p><strong>Soluciones:</strong></p>
+        <ul>
+            <li><strong>Reserva espacio:</strong> Define width y height en todas las imágenes</li>
+            <li><strong>Aspect-ratio CSS:</strong> Mantiene el espacio mientras carga</li>
+            <li><strong>Preload fuentes:</strong> Evita cambios de tipografía</li>
+            <li><strong>Transform en lugar de top/left:</strong> Para animaciones</li>
+        </ul>
+
+        <h2>Herramientas para Medir</h2>
+        <p><strong>1. PageSpeed Insights (Google)</strong></p>
+        <p>La herramienta oficial. Te da puntuación de 0-100 y sugerencias específicas.</p>
+
+        <p><strong>2. Lighthouse (Chrome DevTools)</strong></p>
+        <p>Análisis detallado en tu navegador. Perfecto para desarrollo.</p>
+
+        <p><strong>3. Search Console</strong></p>
+        <p>Informe de Core Web Vitals con datos reales de tus usuarios.</p>
+
+        <p><strong>4. WebPageTest</strong></p>
+        <p>Análisis profundo desde múltiples ubicaciones.</p>
+
+        <h2>Optimizaciones Rápidas (Quick Wins)</h2>
+        <p>Si tienes poco tiempo, empieza por aquí:</p>
+        <ol>
+            <li><strong>Activa caché del navegador</strong> (5 minutos)</li>
+            <li><strong>Comprime imágenes</strong> (30 minutos)</li>
+            <li><strong>Usa un CDN gratuito</strong> como Cloudflare (15 minutos)</li>
+            <li><strong>Minimiza CSS y JS</strong> (20 minutos)</li>
+            <li><strong>Define dimensiones de imágenes</strong> (10 minutos)</li>
+        </ol>
+
+        <h2>Caso Real: De 23 a 95 en PageSpeed</h2>
+        <p><strong>Cliente:</strong> Ecommerce de moda<br>
+            <strong>Problema:</strong> Puntuación PageSpeed de 23/100<br>
+            <strong>Acciones:</strong>
+        </p>
+        <ul>
+            <li>Optimizamos 847 imágenes (reducción del 73%)</li>
+            <li>Implementamos lazy loading</li>
+            <li>Migramos a Cloudflare CDN</li>
+            <li>Eliminamos 14 plugins innecesarios</li>
+            <li>Minimizamos CSS y JS</li>
+        </ul>
+        <p><strong>Resultado:</strong> Puntuación 95/100, tiempo de carga de 5.2s a 1.8s<br>
+            <strong>Impacto SEO:</strong> Posiciones promedio mejoraron 12 lugares en 2 meses
+        </p>
+
+        <h2>Errores Comunes</h2>
+        <p><strong>1. Optimizar solo para desktop:</strong> Google evalúa principalmente móvil</p>
+        <p><strong>2. Ignorar el hosting:</strong> Un hosting barato puede arruinar todas tus optimizaciones</p>
+        <p><strong>3. Demasiados plugins:</strong> En WordPress, 30+ plugins suelen causar problemas</p>
+        <p><strong>4. No medir datos reales:</strong> PageSpeed da estimaciones, Search Console datos reales</p>
+
+        <h2>WordPress: Plugins Recomendados</h2>
+        <ul>
+            <li><strong>WP Rocket:</strong> Caché y optimización completa (de pago)</li>
+            <li><strong>Imagify:</strong> Compresión automática de imágenes</li>
+            <li><strong>Autoptimize:</strong> Minimiza CSS, JS y HTML (gratis)</li>
+            <li><strong>Perfmatters:</strong> Desactiva scripts innecesarios por página</li>
+        </ul>
+
+        <h2>Monitoreo Continuo</h2>
+        <p>Los Core Web Vitals no son un "arregla y olvida". Necesitas monitoreo continuo:</p>
+        <ul>
+            <li><strong>Semanal:</strong> Revisa Search Console</li>
+            <li><strong>Mensual:</strong> Análisis detallado con PageSpeed Insights</li>
+            <li><strong>Después de cambios:</strong> Siempre testea antes de lanzar</li>
+        </ul>
+
+        <h2>Conclusión</h2>
+        <p>Los Core Web Vitals son fundamentales para el SEO en 2024. Google premia las webs rápidas y penaliza las
+            lentas. La buena noticia es que optimizarlos mejora tanto tu SEO como la experiencia real de tus usuarios.
+        </p>
+        <p><strong>Siguiente paso:</strong> Mide tu web hoy mismo en PageSpeed Insights y ataca los problemas críticos
+            primero.</p>
+
+        <div
+            style="background:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 100%);padding:3rem;border-radius:12px;text-align:center;margin:4rem 0;color:white">
+            <h3 style="color:white;margin-bottom:1rem">¿Tu web es lenta? Te ayudamos a optimizarla</h3>
+            <a href="index.html#contacto" class="btn-primary" style="background:white;color:var(--primary)">Auditoría de
+                Velocidad Gratis</a>
+        </div>
+
+        <p style="text-align:center;margin-top:4rem"><a href="blog.html" class="btn-secondary"><i
+                    class="fa-solid fa-arrow-left"></i> Volver al Blog</a></p>
+    </article>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>SEO<strong>ParaElBaix</strong></span>
+                    </div>
+                    <p>Tu partner de confianza en posicionamiento web. Resultados medibles, transparencia total.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="index.html#servicios">SEO Local</a></li>
+                        <li><a href="index.html#servicios">SEO Nacional</a></li>
+                        <li><a href="index.html#servicios">SEO Técnico</a></li>
+                        <li><a href="index.html#servicios">Link Building</a></li>
+                        <li><a href="index.html#servicios">Contenido SEO</a></li>
+                        <li><a href="index.html#servicios">Auditorías</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="index.html#casos">Casos de Éxito</a></li>
+                        <li><a href="index.html#precios">Precios</a></li>
+                        <li><a href="blog.html">Blog SEO</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                        <li><a href="index.html#contacto">Auditoría Gratis</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul class="contact-list">
+                        <li><i class="fa-solid fa-phone"></i> +34 640 32 98 80</li>
+                        <li><i class="fa-solid fa-envelope"></i> info@seoparaelbaix.es</li>
+                        <li><i class="fa-solid fa-map-marker-alt"></i> El Baix Llobregat, Barcelona</li>
+                        <li style="margin-top: 15px;">
+                            <a href="https://wa.me/34640329880" target="_blank" style="color: #25D366; font-weight: 600;">
+                                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 SEOParaElBaix. Todos los derechos reservados.</p>
+                <div class="footer-links">
+                    <a href="privacidad.html">Política de Privacidad</a>
+                    <a href="terminos.html">Términos y Condiciones</a>
+                    <a href="cookies.html">Política de Cookies</a>
+                    <a href="blog.html">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
