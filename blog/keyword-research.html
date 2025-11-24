@@ -1,337 +1,391 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keyword Research: Encuentra las Palabras que Venden | SEOParaElBaix</title>
-    <meta name="description"
-        content="Guía completa de keyword research. Aprende a encontrar las palabras clave que realmente traen clientes y ventas a tu negocio.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Keyword Research: Guía Completa para Encontrar las Palabras Clave Perfectas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .article-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            padding: 150px 0 80px;
-            color: white
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .article-title {
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .article-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .article-header h1 {
+            font-family: 'Playfair Display', serif;
             font-size: 3rem;
-            margin-bottom: 1.5rem
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
         }
 
         .article-content {
+            background: white;
+            padding: 3rem 1rem;
             max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 20px
+            margin: 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
         .article-content h2 {
-            font-size: 2rem;
-            margin: 3rem 0 1.5rem
+            color: #667eea;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            border-left: 4px solid #667eea;
+            padding-left: 1rem;
+        }
+
+        .article-content h3 {
+            color: #764ba2;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
         }
 
         .article-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem
+            margin-bottom: 1rem;
+            text-align: justify;
         }
 
-        .keyword-example {
-            background: #f8f9fa;
+        .article-content ul, .article-content ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-left: 4px solid #667eea;
             padding: 1.5rem;
-            border-left: 4px solid var(--accent);
-            margin: 1rem 0;
-            border-radius: 8px
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box strong {
+            color: #667eea;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .cta-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box a {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .cta-box a:hover {
+            transform: scale(1.05);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 2rem 0;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #764ba2;
+        }
+
+        footer {
+            background: #0f1419;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .article-content {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
-
 <body>
-    <a href="https://wa.me/34640329880" target="_blank" class="whatsapp-float"><i class="fa-brands fa-whatsapp"></i></a>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo"><i class="fa-solid fa-chart-line"></i><a href="index.html"
-                    style="text-decoration:none;color:inherit"><span>SEO<strong>ParaElBaix</strong></span></a></div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="index.html#contacto" class="btn-nav">Contacto</a></li>
-            </ul>
-        </div>
-    </nav>
-    <header class="article-header">
-        <div class="container" style="max-width:800px">
-            <h1 class="article-title">Keyword Research: Encuentra las Palabras que Venden</h1>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-search"></i>
+                    SEO Para El Baix
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html#inicio">Inicio</a></li>
+                    <li><a href="../index.html#servicios">Servicios</a></li>
+                    <li><a href="../index.html#blog">Blog</a></li>
+                    <li><a href="../index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-    <article class="article-content">
-        <img src="https://images.pexels.com/photos/3182827/pexels-photo-3182827.jpeg" alt="Keyword Research - Búsqueda" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 2rem;">
-        
-        <p><strong>El keyword research es la base de cualquier estrategia SEO exitosa.</strong> Puedes tener el mejor
-            contenido del mundo, pero si apuntas a las palabras clave equivocadas, no verás resultados. En esta guía
-            aprenderás a encontrar keywords que realmente traen clientes y ventas.</p>
 
-        <h2>Por Qué el Keyword Research Importa</h2>
-        <p>Elegir las keywords correctas es la diferencia entre:</p>
-        <ul>
-            <li>1,000 visitas de curiosos vs 100 visitas de compradores listos</li>
-            <li>Competir con Amazon vs dominar un nicho específico</li>
-            <li>Meses de trabajo desperdiciado vs resultados en semanas</li>
-        </ul>
+    <div class="article-header">
+        <div class="container">
+            <h1>Keyword Research: Guía Completa para Encontrar las Palabras Clave Perfectas</h1>
+            <div class="article-meta">
+                <i class="far fa-calendar"></i> Publicado el 2024
+                <span style="margin: 0 1rem;">|</span>
+                <i class="far fa-user"></i> SEO Para El Baix
+            </div>
+        </div>
+    </div>
 
-        <h2>Los 4 Tipos de Keywords</h2>
+    <div class="article-content">
+        <a href="../index.html#blog" class="back-link"><i class="fas fa-arrow-left"></i> Volver al blog</a>
 
-        <div class="keyword-example">
-            <h3><i class="fa-solid fa-1"></i> Informacionales</h3>
-            <p><strong>Intención:</strong> Aprender algo<br>
-                <strong>Ejemplo:</strong> "qué es SEO", "cómo hacer pasta"<br>
-                <strong>Cuándo usarlas:</strong> Blog, guías, top of funnel
-            </p>
+        <h2>¿Qué es Keyword Research?</h2>
+        <p>El Keyword Research es uno de los pilares fundamentales del SEO. Se trata del proceso de investigar, analizar e identificar las palabras clave y frases que utilizan los usuarios cuando buscan información, productos o servicios relacionados con tu negocio. No es simplemente elegir palabras al azar; es una estrategia basada en datos que te permitirá atraer tráfico de calidad a tu sitio web.</p>
+
+        <p>El keyword research te proporciona información valiosa sobre el comportamiento de búsqueda de tu audiencia, te ayuda a entender sus intenciones de búsqueda, y te permite crear contenido que responda exactamente a lo que están buscando. Cuando haces un keyword research correcto, aumentas las probabilidades de que tu contenido aparezca en los primeros resultados de búsqueda.</p>
+
+        <h2>Tipos de Palabras Clave</h2>
+
+        <h3>1. Palabras Clave Informacionales</h3>
+        <p>Son aquellas que los usuarios utilizan cuando buscan información o quieren aprender sobre un tema específico. Generalmente comienzan con palabras como "cómo", "qué es", "dónde", "cuándo". Ejemplo: "cómo hacer keyword research", "qué es SEO local", "guía de link building".</p>
+
+        <p>Estas palabras clave tienen un alto volumen de búsqueda pero una baja intención de conversión. Sin embargo, son excelentes para atraer tráfico y establecer tu autoridad en el tema. El contenido para estas palabras clave suele ser educativo y detallado.</p>
+
+        <h3>2. Palabras Clave Navegacionales</h3>
+        <p>Los usuarios las utilizan para encontrar un sitio web específico o una página particular. Por ejemplo: "Google My Business", "herramientas SEO", "plataforma de analítica". El usuario ya sabe qué quiere, solo quiere encontrarlo rápidamente.</p>
+
+        <p>Estas palabras clave tienen una alta intención de conversión pero generalmente las buscan personas que ya conocen tu marca o que buscan competidores directos. Son menos competitivas en términos de volumen de búsqueda.</p>
+
+        <h3>3. Palabras Clave Comerciales</h3>
+        <p>Son aquellas que indican que el usuario está considerando hacer una compra o contratar un servicio. Incluyen palabras como "mejor", "barato", "ofertas", "comprar", "precio". Ejemplo: "mejor herramienta de keyword research", "servicio SEO Barcelona", "consultoría digital barata".</p>
+
+        <p>Estas palabras clave son extremadamente valiosas porque representan usuarios en una etapa avanzada del viaje de compra. Aunque tienen menor volumen de búsqueda, su intención es clara y la tasa de conversión es alta.</p>
+
+        <h3>4. Palabras Clave Transaccionales</h3>
+        <p>Indican una intención de realizar una transacción inmediata. Son muy específicas y generalmente incluyen el nombre del producto o servicio junto con términos de compra: "comprar SEO local", "contratar consultoría", "descargar guía gratuita". El usuario está listo para actuar.</p>
+
+        <p>Estas son las palabras clave más valiosas para el ROI, aunque sean más competitivas. Un usuario que busca palabras transaccionales está muy cerca de convertirse en cliente.</p>
+
+        <div class="highlight-box">
+            <strong>💡 Tip importante:</strong> Una estrategia equilibrada incluye los cuatro tipos. Las palabras clave informacionales te traen tráfico, las navegacionales crean marca, las comerciales generan consideración, y las transaccionales generan ventas. Necesitas todas ellas para una estrategia de contenido completa.
         </div>
 
-        <div class="keyword-example">
-            <h3><i class="fa-solid fa-2"></i> Navegacionales</h3>
-            <p><strong>Intención:</strong> Encontrar un sitio específico<br>
-                <strong>Ejemplo:</strong> "facebook login", "amazon España"<br>
-                <strong>Cuándo usarlas:</strong> Solo si eres una marca conocida
-            </p>
+        <h2>El Proceso de Keyword Research</h2>
+
+        <h3>Paso 1: Lluvia de Ideas Inicial</h3>
+        <p>Comienza pensando en los temas principales de tu negocio. Si haces SEO, tus palabras clave principales serían "SEO", "posicionamiento en buscadores", "consultoría SEO", etc. Haz una lista de 10-20 palabras clave principales relacionadas con tu industria.</p>
+
+        <p>En esta fase, también considera las palabras clave que ya sabes que tus clientes utilizan. Si tienes experiencia vendiendo, seguramente has escuchado cómo los clientes describen tus servicios en sus propias palabras. Anota todas ellas.</p>
+
+        <h3>Paso 2: Utilizar Herramientas de Keyword Research</h3>
+        <p>Las herramientas son esenciales para obtener datos reales. Las más populares incluyen:</p>
+
+        <ul>
+            <li><strong>Google Keyword Planner:</strong> Gratuita, ofrece volumen de búsqueda estimado y tendencias.</li>
+            <li><strong>Ahrefs:</strong> Una de las mejores, proporciona datos completos de búsqueda, dificultad, oportunidades.</li>
+            <li><strong>SEMrush:</strong> Excelente para análisis de competencia y palabras clave nuevas.</li>
+            <li><strong>Ubersuggest:</strong> Más asequible, buena para principiantes.</li>
+            <li><strong>AnswerThePublic:</strong> Muestra preguntas reales que hace la gente sobre tu tema.</li>
+            <li><strong>Google Search Console:</strong> Muestra palabras clave reales que ya traen tráfico a tu sitio.</li>
+        </ul>
+
+        <p>Ingresa tu lista inicial de palabras clave en estas herramientas y obtén datos sobre volumen de búsqueda mensual, dificultad de posicionamiento y oportunidades de contenido.</p>
+
+        <h3>Paso 3: Analizar Métricas Clave</h3>
+        <p>Cuando analices cada palabra clave, considera estos factores:</p>
+
+        <ul>
+            <li><strong>Volumen de Búsqueda:</strong> ¿Cuántas personas buscan esta palabra clave cada mes? Un volumen alto significa más potencial de tráfico.</li>
+            <li><strong>Dificultad de Posicionamiento (SEO Difficulty):</strong> ¿Qué tan competida es esta palabra clave? Las palabras clave con dificultad baja son más fáciles de posicionar.</li>
+            <li><strong>Intención de Búsqueda:</strong> ¿Qué quiere realmente el usuario que busca esta palabra? ¿Información, navegación, compra?</li>
+            <li><strong>Costo Por Clic (CPC):</strong> En publicidad PPC, ¿cuánto cuesta clickear en anuncios? Un CPC alto indica alto valor comercial.</li>
+            <li><strong>Tendencia:</strong> ¿Está creciendo o cayendo el interés en esta palabra clave?</li>
+        </ul>
+
+        <h3>Paso 4: Analizar la Intención de Búsqueda</h3>
+        <p>Busca manualmente cada palabra clave en Google y observa los resultados. ¿Qué tipos de contenido aparecen? ¿Artículos de blog, páginas de producto, vídeos? Google muestra los tipos de contenido que considera más relevantes para cada palabra clave. Tu contenido debe coincidir con esa intención.</p>
+
+        <p>Por ejemplo, si buscas "cómo hacer SEO local", verás tutoriales y guías. Si buscas "servicio SEO Barcelona", verás páginas de servicios. Asegúrate de crear el tipo correcto de contenido para cada palabra clave.</p>
+
+        <div class="highlight-box">
+            <strong>🔍 Análisis de Competencia:</strong> Observa también quién está posicionando en los primeros lugares. ¿Son grandes empresas con mucha autoridad o son blogs pequeños? Esto te da una indicación de si es realista posicionar en esa palabra clave.
         </div>
 
-        <div class="keyword-example">
-            <h3><i class="fa-solid fa-3"></i> Comerciales</h3>
-            <p><strong>Intención:</strong> Investigar antes de comprar<br>
-                <strong>Ejemplo:</strong> "mejor CRM para pymes", "iPhone 15 vs Samsung S24"<br>
-                <strong>Cuándo usarlas:</strong> Comparativas, reviews, mejores de 2024
-            </p>
+        <h2>Estrategia de Palabras Clave Long-Tail</h2>
+
+        <p>Las palabras clave "long-tail" son frases más largas y específicas. Aunque tienen menor volumen de búsqueda, tienen menos competencia y una intención más clara. Por ejemplo, en lugar de posicionar en "SEO" (muy competido), podrías posicionar en "estrategia SEO para pequeños negocios en Barcelona" (menos competido, más específico).</p>
+
+        <p>Las palabras clave long-tail representan aproximadamente el 70% de todo el tráfico de búsqueda. Aunque cada una tenga menos volumen individualmente, en conjunto generan la mayoría del tráfico. Es la estrategia perfecta para nuevos sitios web que no tienen aún autoridad suficiente para competir en palabras clave cortas y muy competidas.</p>
+
+        <p>Para encontrar palabras clave long-tail, utiliza:</p>
+        <ul>
+            <li>Google Suggest: Escribe tu palabra clave y observa las sugerencias.</li>
+            <li>AnswerThePublic: Muestra preguntas específicas que hace la gente.</li>
+            <li>Google Search Console: Muestra palabras clave reales de baja competencia por las que ya estás posicionando.</li>
+            <li>Herramientas como Ahrefs o SEMrush con filtros de baja dificultad.</li>
+        </ul>
+
+        <h2>Análisis de Competencia</h2>
+
+        <p>Identificar qué palabras clave posicionan tus competidores es una parte crucial del keyword research. Puedes encontrar oportunidades que te hayan pasado por alto o identificar brechas en el contenido de tu competencia.</p>
+
+        <p>Herramientas como Ahrefs y SEMrush tienen funciones específicas para esto. Ingresa el sitio web de un competidor y obtén la lista de palabras clave por las que está posicionando. Luego, identifica:</p>
+
+        <ul>
+            <li>Palabras clave que tus competidores posicionan pero tú no.</li>
+            <li>Palabras clave en las que ambos estáis posicionando pero ellos están arriba.</li>
+            <li>Palabras clave que tú posicionas pero ellos no (tu oportunidad competitiva).</li>
+        </ul>
+
+        <h2>Mapeo de Palabras Clave a Contenido</h2>
+
+        <p>Una vez que hayas identificado tus palabras clave objetivo, es crucial mapearlas a tu contenido existente y planificar contenido nuevo. Nunca intentes posicionar por la misma palabra clave en múltiples páginas. Cada página debe enfocarse en 1-3 palabras clave relacionadas.</p>
+
+        <p>Por ejemplo, podrías tener:</p>
+        <ul>
+            <li>Página principal: "SEO", "posicionamiento en buscadores"</li>
+            <li>Artículo de blog: "qué es SEO local", "SEO local guía"</li>
+            <li>Otra página: "servicios SEO Barcelona", "consultoría SEO"</li>
+        </ul>
+
+        <p>Este mapeo asegura que no haya competencia interna entre tus propias páginas y que cada una tenga la máxima oportunidad de posicionarse.</p>
+
+        <h2>Errores Comunes en Keyword Research</h2>
+
+        <h3>1. Elegir Palabras Clave Solo por Volumen</h3>
+        <p>El volumen alto no significa nada si la competencia es insuperable o si la palabra clave no tiene conversión. Es mejor posicionar en 10 palabras clave con 100 búsquedas mensuales cada una que en 1 palabra con 10,000 búsquedas pero imposible de posicionar.</p>
+
+        <h3>2. Ignorar la Intención de Búsqueda</h3>
+        <p>Crear un artículo "cómo hacer" para una palabra clave "comprar" es un error fundamental. El usuario quiere comprar, no leer un tutorial. Debes respetar la intención de búsqueda.</p>
+
+        <h3>3. No Revisar Regularmente</h3>
+        <p>El keyword research no es una actividad única. Las tendencias de búsqueda cambian, nuevas palabras clave emergen. Revisa tu estrategia de palabras clave cada trimestre.</p>
+
+        <h3>4. Olvidar las Palabras Clave de tu Competencia</h3>
+        <p>Solo enfocarse en tus propias ideas significa que podrías perder oportunidades que tus competidores ya han identificado.</p>
+
+        <div class="cta-box">
+            <h3>¿Necesitas Ayuda con tu Keyword Research?</h3>
+            <p>Realiza un audit de palabras clave estratégico para tu negocio y descubre las oportunidades que estás perdiendo.</p>
+            <a href="https://wa.me/34636436436">Contacta con nosotros por WhatsApp</a>
         </div>
-
-        <div class="keyword-example">
-            <h3><i class="fa-solid fa-4"></i> Transaccionales</h3>
-            <p><strong>Intención:</strong> Comprar ahora<br>
-                <strong>Ejemplo:</strong> "comprar iPhone 15", "abogado divorcio Barcelona precio"<br>
-                <strong>Cuándo usarlas:</strong> Páginas de producto/servicio, páginas de ventas
-            </p>
-        </div>
-
-        <h2>El Proceso de Keyword Research Paso a Paso</h2>
-
-        <h3>Paso 1: Brainstorming Inicial</h3>
-        <p>Empieza listando temas relevantes para tu negocio:</p>
-        <ul>
-            <li>Productos/servicios que ofreces</li>
-            <li>Problemas que resuelves</li>
-            <li>Preguntas frecuentes de tus clientes</li>
-            <li>Términos de tu industria</li>
-        </ul>
-
-        <h3>Paso 2: Expandir con Herramientas</h3>
-        <p><strong>Herramientas gratuitas:</strong></p>
-        <ul>
-            <li><strong>Google Autocomplete:</strong> Empieza a escribir y mira las sugerencias</li>
-            <li><strong>People Also Ask:</strong> Preguntas relacionadas en Google</li>
-            <li><strong>Google Search Console:</strong> Keywords que ya te traen tráfico</li>
-            <li><strong>AnswerThePublic:</strong> Visualización de preguntas</li>
-        </ul>
-
-        <p><strong>Herramientas de pago:</strong></p>
-        <ul>
-            <li><strong>Ahrefs:</strong> La más completa, datos precisos</li>
-            <li><strong>SEMrush:</strong> Excelente para competidores</li>
-            <li><strong>Ubersuggest:</strong> Opción económica</li>
-        </ul>
-
-        <h3>Paso 3: Analizar Métr icas Clave</h3>
-        <p>Para cada keyword, evalúa:</p>
-
-        <p><strong>1. Volumen de Búsqueda</strong></p>
-        <ul>
-            <li>Alto (>10K/mes): Mucho tráfico, alta competencia</li>
-            <li>Medio (1K-10K): Balance ideal para la mayoría</li>
-            <li>Bajo (<1K): Nicho, más fácil de rankear</li>
-        </ul>
-
-        <p><strong>2. Keyword Difficulty (KD)</strong></p>
-        <ul>
-            <li>0-30: Fácil (empieza aquí)</li>
-            <li>31-60: Medio (requiere esfuerzo)</li>
-            <li>61-100: Difícil (necesitas autoridad de dominio)</li>
-        </ul>
-
-        <p><strong>3. CPC (Coste Por Click)</strong></p>
-        <p>Si el CPC es alto, significa que esa keyword genera ventas (alguien paga por ella en ads).</p>
-
-        <h3>Paso 4: Analizar la Intención</h3>
-        <p>No te fíes solo de métricas. Busca la keyword en Google y pregúntate:</p>
-        <ul>
-            <li>¿Qué tipo de contenido rankea? (blog posts, páginas de producto, videos)</li>
-            <li>¿Puedo crear algo mejor que los resultados actuales?</li>
-            <li>¿La intención coincide con mi objetivo? (enseñar vs vender)</li>
-        </ul>
-
-        <h2>Estrategia de Long Tail Keywords</h2>
-        <p>Las keywords long tail (3+ palabras) son tu mejor amigo cuando empiezas:</p>
-
-        <div class="keyword-example">
-            <p><strong>Short tail (difícil):</strong> "zapatillas" - 450K búsquedas/mes, KD 85</p>
-            <p><strong>Long tail (fácil):</strong> "zapatillas running mujer pronador" - 800 búsquedas/mes, KD 15</p>
-            <p><strong>Ventaja:</strong> Menos competencia, mayor intención de compra, más fácil convertir</p>
-        </div>
-
-        <h2>Espiar a la Competencia</h2>
-        <p>Tu competencia ya hizo keyword research. ¡Aprovéchalo!</p>
-
-        <p><strong>Proceso:</strong></p>
-        <ol>
-            <li>Identifica tus 3-5 competidores principales</li>
-            <li>Usa Ahrefs/SEMrush para ver sus keywords top</li>
-            <li>Busca keywords donde rankeen en posiciones 4-10 (oportunidad de superarles)</li>
-            <li>Encuentra keywords que tengas tú pero ellos no (ventaja competitiva)</li>
-        </ol>
-
-        <h2>Agrupar Keywords por Intención</h2>
-        <p>No crees una página por cada keyword similar. Agrúpalas:</p>
-
-        <div class="keyword-example">
-            <p><strong>Tema:</strong> CRM para pymes</p>
-            <p><strong>Keywords agrupadas:</strong></p>
-            <ul>
-                <li>mejor CRM para pymes</li>
-                <li>CRM económico pequeñas empresas</li>
-                <li>software gestión clientes pyme</li>
-                <li>CRM español para pymes</li>
-            </ul>
-            <p><strong>Estrategia:</strong> Una sola página optimizada para todas ellas</p>
-        </div>
-
-        <h2>Crear un Mapa de Contenidos</h2>
-        <p>Organiza tus keywords en una estructura:</p>
-
-        <ul>
-            <li><strong>Página principal:</strong> Keyword más importante (ej: "consultoría SEO Barcelona")</li>
-            <li><strong>Páginas de servicio:</strong> Keywords específicas ("auditoría SEO", "link building")</li>
-            <li><strong>Blog posts:</strong> Keywords informacionales ("qué es SEO", "cómo hacer keyword research")</li>
-        </ul>
-
-        <h2>Errores Comunes a Evitar</h2>
-
-        <p><strong>1. Obsesionarse con el volumen</strong></p>
-        <p>1,000 visitas cualificadas > 10,000 visitas irrelevantes</p>
-
-        <p><strong>2. Ignorar la dificultad</strong></p>
-        <p>Si tienes DA 15, no apuntes a keywords con KD 80</p>
-
-        <p><strong>3. Keyword stuffing</strong></p>
-        <p>Usa la keyword naturalmente 2-3 veces, no 50</p>
-
-        <p><strong>4. No actualizar</strong></p>
-        <p>Las tendencias cambian. Revisa tus keywords cada 6 meses</p>
-
-        <h2>Herramientas Bonus</h2>
-        <ul>
-            <li><strong>Google Trends:</strong> Ve si la keyword está en alza o bajada</li>
-            <li><strong>AlsoAsked:</strong> Descubre preguntas relacionadas</li>
-            <li><strong>Keywords Everywhere:</strong> Extensión Chrome que muestra datos en Google</li>
-        </ul>
-
-        <h2>Caso Práctico: De 0 a 50K Visitas</h2>
-        <p><strong>Cliente:</strong> Tienda online de productos eco<br>
-            <strong>Estrategia:</strong>
-        </p>
-        <ol>
-            <li>Identificamos 120 long-tail keywords con KD < 25</li>
-            <li>Creamos 24 guías completas (1 guía = 5 keywords agrupadas)</li>
-            <li>Optimizamos páginas de producto para keywords transaccionales</li>
-        </ol>
-        <p><strong>Resultado:</strong> De 0 a 52,000 visitas orgánicas mensuales en 8 meses</p>
 
         <h2>Conclusión</h2>
-        <p>El keyword research no es una tarea de un día. Es un proceso continuo que debe guiar toda tu estrategia de
-            contenidos. Invierte tiempo aquí al principio y ahorrarás meses de trabajo desperdiciado.</p>
+        <p>El keyword research es la base de cualquier estrategia SEO exitosa. No es un proceso complicado, pero requiere dedicación y atención a los detalles. Tomándote el tiempo para investigar y analizar correctamente tus palabras clave, estarás posicionando tu sitio web para el éxito a largo plazo. Recuerda: estás tratando de entender qué quieren tus clientes potenciales y dándoles exactamente lo que buscan. Eso es el keyword research.</p>
 
-        <p><strong>Siguiente paso:</strong> Coge una hoja de cálculo y empieza a listar tus primeras 50 keywords
-            candidatas. Analiza métricas, agrupa por intención y crea tu mapa de contenidos.</p>
+        <a href="../index.html#blog" class="back-link"><i class="fas fa-arrow-left"></i> Volver al blog</a>
+    </div>
 
-        <div
-            style="background:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 100%);padding:3rem;border-radius:12px;text-align:center;margin:4rem 0;color:white">
-            <h3 style="color:white;margin-bottom:1rem">¿Necesitas ayuda con tu keyword research?</h3>
-            <p style="color:white;margin-bottom:2rem">Te entregamos un informe completo con las mejores keywords para tu
-                negocio</p>
-            <a href="index.html#contacto" class="btn-primary" style="background:white;color:var(--primary)">Solicitar
-                Keyword Research Gratis</a>
-        </div>
-
-        <p style="text-align:center;margin-top:4rem"><a href="blog.html" class="btn-secondary"><i
-                    class="fa-solid fa-arrow-left"></i> Volver al Blog</a></p>
-    </article>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <i class="fa-solid fa-chart-line"></i>
-                        <span>SEO<strong>ParaElBaix</strong></span>
-                    </div>
-                    <p>Tu partner de confianza en posicionamiento web. Resultados medibles, transparencia total.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Servicios</h4>
-                    <ul>
-                        <li><a href="index.html#servicios">SEO Local</a></li>
-                        <li><a href="index.html#servicios">SEO Nacional</a></li>
-                        <li><a href="index.html#servicios">SEO Técnico</a></li>
-                        <li><a href="index.html#servicios">Link Building</a></li>
-                        <li><a href="index.html#servicios">Contenido SEO</a></li>
-                        <li><a href="index.html#servicios">Auditorías</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Empresa</h4>
-                    <ul>
-                        <li><a href="index.html#casos">Casos de Éxito</a></li>
-                        <li><a href="index.html#precios">Precios</a></li>
-                        <li><a href="blog.html">Blog SEO</a></li>
-                        <li><a href="index.html#contacto">Contacto</a></li>
-                        <li><a href="index.html#contacto">Auditoría Gratis</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Contacto</h4>
-                    <ul class="contact-list">
-                        <li><i class="fa-solid fa-phone"></i> +34 640 32 98 80</li>
-                        <li><i class="fa-solid fa-envelope"></i> info@seoparaelbaix.es</li>
-                        <li><i class="fa-solid fa-map-marker-alt"></i> El Baix Llobregat, Barcelona</li>
-                        <li style="margin-top: 15px;">
-                            <a href="https://wa.me/34640329880" target="_blank" style="color: #25D366; font-weight: 600;">
-                                <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2024 SEOParaElBaix. Todos los derechos reservados.</p>
-                <div class="footer-links">
-                    <a href="privacidad.html">Política de Privacidad</a>
-                    <a href="terminos.html">Términos y Condiciones</a>
-                    <a href="cookies.html">Política de Cookies</a>
-                    <a href="blog.html">Blog</a>
-                </div>
-            </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 SEO Para El Baix. Todos los derechos reservados.</p>
+            <p>Teléfono: +34 636 436 436 | Email: info@seoparaelbaix.com</p>
         </div>
     </footer>
-    <script src="script.js"></script>
 </body>
-
 </html>
