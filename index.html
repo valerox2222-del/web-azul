@@ -8,28 +8,114 @@
     <meta name="keywords" content="SEO, posicionamiento, Google, El Baix, marketing digital">
     <meta name="author" content="SEO Para El Baix">
     <link rel="canonical" href="https://seoparaelbaix.es">
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <!-- Fallback inline CSS: se aplica si css/styles.css no carga correctamente -->
     <style>
-        /* Estilos críticos de fallback para evitar página en blanco (con !important para prioridad) */
-        html, body { height: 100% !important; margin: 0 !important; padding: 0 !important; font-family: Arial, Helvetica, sans-serif !important; background: #ffffff !important; color: #111 !important; }
-        .header { background: linear-gradient(135deg, #0f1419 0%, #1a2533 100%) !important; color: #fff !important; position: sticky !important; top: 0 !important; z-index: 1000 !important; padding: 0.8rem 0 !important; }
-        .container { max-width: 1200px !important; margin: 0 auto !important; padding: 0 20px !important; }
-        .logo { font-weight: 700 !important; color: #00d4ff !important; text-decoration: none !important; display: inline-block !important; }
-        .nav-menu { display: flex !important; gap: 1rem !important; list-style: none !important; align-items: center !important; }
-        .nav-menu a { color: #fff !important; text-decoration: none !important; }
-        .hero { min-height: 60vh !important; background: linear-gradient(135deg, #0f1419 0%, #1a2533 50%, #0099cc 100%) !important; color: #fff !important; display:flex !important; align-items:center !important; justify-content:center !important; text-align:center !important; padding: 2rem 1rem !important; }
-        .btn { padding: 10px 20px !important; border-radius: 30px !important; text-decoration: none !important; display: inline-block !important; font-weight: 600 !important; }
-        .btn-primary { background: #00d4ff !important; color: #fff !important; }
-        .btn-secondary { background: transparent !important; color: #fff !important; border: 2px solid #00d4ff !important; }
-        .servicios, .blog, .contacto, .sobre-nosotros { padding: 60px 0 !important; background: #f8f9fa !important; color: #111 !important; }
-        .servicio-card, .blog-card, .info-card { background: #fff !important; padding: 1.2rem !important; border-radius: 10px !important; box-shadow: 0 6px 18px rgba(0,0,0,0.06) !important; color: #111 !important; }
-        .footer { background: linear-gradient(135deg, #0f1419 0%, #1a2533 100%) !important; color: #fff !important; padding: 40px 0 !important; }
-        .whatsapp-float { position: fixed !important; bottom: 20px !important; right: 20px !important; width: 50px !important; height: 50px !important; background: #25d366 !important; color: #fff !important; border-radius: 50% !important; display:flex !important; align-items:center !important; justify-content:center !important; font-size: 1.4rem !important; z-index: 999 !important; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Poppins', Arial, sans-serif; color: #1a1a1a; line-height: 1.6; background: #fff; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .header { background: linear-gradient(135deg, #0f1419 0%, #1a2533 100%); color: #fff; position: sticky; top: 0; z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .navbar { padding: 1rem 0; }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+        .navbar-brand .logo { font-size: 1.8rem; font-weight: 700; color: #00d4ff; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+        .nav-menu { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        .nav-menu a { color: #fff; text-decoration: none; font-weight: 500; transition: all 0.3s; }
+        .nav-menu a:hover { color: #00d4ff; }
+        .btn-cta { background: #ff6b6b !important; color: #fff !important; padding: 10px 20px !important; border-radius: 30px !important; }
+        .hero { min-height: 100vh; background: linear-gradient(135deg, #0f1419 0%, #1a2533 50%, #0099cc 100%); color: #fff; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; text-align: center; }
+        .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .hero-content h1 { font-size: 4rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2; }
+        .hero-content h1 .highlight { color: #00d4ff; text-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
+        .hero-content p { font-size: 1.3rem; margin-bottom: 2rem; color: rgba(255,255,255,0.9); }
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; margin-bottom: 3rem; flex-wrap: wrap; }
+        .btn { padding: 12px 30px; border: none; border-radius: 50px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-block; }
+        .btn-primary { background: linear-gradient(135deg, #00d4ff, #0099cc); color: #fff; box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0, 212, 255, 0.5); }
+        .btn-secondary { background: transparent; color: #fff; border: 2px solid #00d4ff; }
+        .btn-secondary:hover { background: #00d4ff; color: #0f1419; }
+        .hero-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .stat { text-align: center; }
+        .stat h3 { font-size: 2.5rem; color: #00d4ff; margin-bottom: 0.5rem; }
+        .stat p { color: rgba(255,255,255,0.8); font-size: 0.95rem; }
+        .servicios, .blog, .sobre-nosotros, .contacto { padding: 100px 0; }
+        .servicios { background: #f8f9fa; }
+        .blog { background: #fff; }
+        .sobre-nosotros { background: #f8f9fa; }
+        .contacto { background: #fff; }
+        h2 { font-size: 3rem; text-align: center; margin-bottom: 1rem; color: #1a1a1a; font-family: 'Playfair Display', serif; }
+        .section-subtitle { text-align: center; color: #666; font-size: 1.2rem; margin-bottom: 3rem; }
+        .servicios-grid, .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+        .servicio-card, .blog-card { background: #fff; padding: 2.5rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s; }
+        .servicio-card:hover, .blog-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+        .servicio-icon { width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #00d4ff, #0099cc); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #fff; }
+        .servicio-card h3, .blog-card h3 { font-size: 1.3rem; margin-bottom: 1rem; color: #1a1a1a; }
+        .servicio-card p, .blog-card p { color: #666; margin-bottom: 1.5rem; }
+        .enlace-servicio { color: #00d4ff; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s; }
+        .enlace-servicio:hover { gap: 1rem; color: #0099cc; }
+        .blog-card img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem; }
+        .blog-date { color: #00d4ff; font-weight: 600; font-size: 0.9rem; }
+        .btn-read-more { color: #00d4ff; text-decoration: none; font-weight: 600; display: inline-flex; gap: 0.5rem; }
+        .btn-read-more:hover { gap: 1rem; color: #0099cc; }
+        .blog-footer { text-align: center; }
+        .sobre-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .sobre-text h3 { font-size: 2.5rem; margin-bottom: 1rem; color: #1a1a1a; }
+        .sobre-text p { color: #666; margin-bottom: 1.5rem; font-size: 1.05rem; }
+        .valores { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+        .valor { display: flex; gap: 1rem; align-items: flex-start; }
+        .valor i { color: #00d4ff; font-size: 1.5rem; margin-top: 0.3rem; }
+        .valor h4 { font-size: 1.1rem; margin-bottom: 0.3rem; color: #1a1a1a; }
+        .valor p { margin: 0; font-size: 0.95rem; }
+        .sobre-imagen img { width: 100%; border-radius: 15px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+        .contacto-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
+        .contacto-info { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        .info-card { background: #f8f9fa; padding: 2rem; border-radius: 15px; text-align: center; transition: all 0.3s; }
+        .info-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.1); transform: translateY(-5px); }
+        .info-card i { font-size: 2.5rem; color: #00d4ff; margin-bottom: 1rem; }
+        .info-card h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #1a1a1a; }
+        .info-card p { color: #666; }
+        .whatsapp-card { background: linear-gradient(135deg, rgba(37, 211, 102, 0.1), rgba(37, 211, 102, 0.05)); border: 2px solid rgba(37, 211, 102, 0.2); }
+        .whatsapp-card i { color: #25d366; }
+        .btn-whatsapp { display: inline-flex; align-items: center; gap: 0.5rem; background: #25d366; color: #fff !important; padding: 8px 16px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-top: 1rem; transition: all 0.3s; }
+        .btn-whatsapp:hover { background: #20ba5c; transform: scale(1.05); }
+        .contacto-form { display: flex; flex-direction: column; gap: 1.5rem; }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group input, .form-group textarea { padding: 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-family: 'Poppins', Arial; font-size: 1rem; transition: all 0.3s; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #00d4ff; box-shadow: 0 0 10px rgba(0, 212, 255, 0.2); }
+        .btn-enviar { width: 100%; padding: 15px; font-size: 1.1rem; }
+        .footer { background: linear-gradient(135deg, #0f1419 0%, #1a2533 100%); color: #fff; padding: 50px 0 20px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+        .footer-section h4 { font-size: 1.2rem; margin-bottom: 1rem; color: #00d4ff; }
+        .footer-section p { color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 1rem; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.8rem; }
+        .footer-section a { color: rgba(255,255,255,0.7); text-decoration: none; transition: all 0.3s; display: inline-block; }
+        .footer-section a:hover { color: #00d4ff; padding-left: 0.5rem; }
+        .social-links { display: flex; gap: 1rem; margin-top: 1rem; }
+        .social-links a { width: 45px; height: 45px; background: rgba(0, 212, 255, 0.1); border: 2px solid #00d4ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: #00d4ff; transition: all 0.3s; }
+        .social-links a:hover { background: #00d4ff; color: #0f1419; }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #fff; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); transition: all 0.3s; z-index: 999; animation: bounce 2s infinite; text-decoration: none; }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6); animation: none; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .hamburger { display: none; flex-direction: column; background: none; border: none; cursor: pointer; gap: 0.5rem; }
+        .hamburger span { width: 25px; height: 3px; background: #fff; border-radius: 2px; transition: all 0.3s; }
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-menu { position: absolute; top: 70px; left: 0; width: 100%; background: #0f1419; flex-direction: column; gap: 0; padding: 2rem 0; max-height: 0; overflow: hidden; transition: max-height 0.3s; }
+            .nav-menu.active { max-height: 500px; }
+            .hero-content h1 { font-size: 2rem; }
+            .hero-content p { font-size: 1rem; }
+            .hero-buttons { flex-direction: column; }
+            .btn { width: 100%; text-align: center; }
+            h2 { font-size: 2rem; }
+            .sobre-content, .contacto-content { grid-template-columns: 1fr; }
+            .contacto-info { grid-template-columns: 1fr; }
+            .whatsapp-float { width: 50px; height: 50px; font-size: 1.5rem; bottom: 20px; right: 20px; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
