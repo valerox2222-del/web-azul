@@ -45,6 +45,18 @@
         .blog { background: #fff; }
         .sobre-nosotros { background: #f8f9fa; }
         .contacto { background: #fff; }
+        .servicios-detallados { padding: 100px 0; background: #fff; }
+        .servicios-detallados-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .servicio-detallado-card { background: #fff; border: 2px solid #e0e0e0; padding: 2rem; border-radius: 15px; transition: all 0.3s; position: relative; }
+        .servicio-detallado-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.15); border-color: #00d4ff; }
+        .servicio-detallado-card.highlighted { border: 2px solid #00d4ff; box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2); }
+        .servicio-detallado-card .badge { position: absolute; top: -15px; right: 20px; background: linear-gradient(135deg, #ff9a56 0%, #ff6b6b 100%); color: #fff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 700; font-size: 0.85rem; }
+        .servicio-detallado-card .card-icon { width: 70px; height: 70px; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 1.5rem; }
+        .servicio-detallado-card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; color: #1a1a1a; font-weight: 700; }
+        .servicio-detallado-card p { color: #666; margin-bottom: 1.5rem; line-height: 1.6; }
+        .servicio-features { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+        .servicio-features li { color: #666; display: flex; align-items: center; gap: 0.8rem; font-size: 0.95rem; }
+        .servicio-features i { color: #00d4ff; font-weight: 700; }
         h2 { font-size: 3rem; text-align: center; margin-bottom: 1rem; color: #1a1a1a; font-family: 'Playfair Display', serif; }
         .section-subtitle { text-align: center; color: #666; font-size: 1.2rem; margin-bottom: 3rem; }
         .servicios-grid, .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
@@ -135,8 +147,8 @@
                 </button>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#servicios">Servicios Rápidos</a></li>
+                    <li><a href="#servicios-detallados">Todos los Servicios</a></li>
                     <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
                     <li><a href="#contacto" class="btn-cta">Contacto</a></li>
                 </ul>
@@ -234,75 +246,97 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section class="blog" id="blog">
+    <!-- Servicios Detallados Section -->
+    <section class="servicios-detallados" id="servicios-detallados">
         <div class="container">
-            <h2>Blog de SEO</h2>
-            <p class="section-subtitle">Aprende sobre posicionamiento en buscadores</p>
+            <h2>Nuestros Servicios SEO</h2>
+            <p class="section-subtitle">Soluciones personalizadas para cada tipo de negocio</p>
             
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <img src="https://images.pexels.com/photos/3183165/pexels-photo-3183165.jpeg?w=400&h=250&auto=compress" alt="Tendencias SEO 2024">
-                    <div class="blog-content">
-                        <span class="blog-date">24 Nov 2024</span>
-                        <h3>Cómo Crear Contenido SEO que Convierta</h3>
-                        <p>Aprende a crear contenido optimizado para SEO que no solo posicione sino que transforme visitantes en clientes.</p>
-                        <a href="blog/contenido-seo.html" class="btn-read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+            <div class="servicios-detallados-grid">
+                <!-- SEO Local -->
+                <div class="servicio-detallado-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff;">
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
-                </article>
+                    <h3>SEO Local</h3>
+                    <p>Aparece en el mapa de Google cuando busquen cerca de ti. Perfecto para restaurantes, clínicas y tiendas físicas.</p>
+                    <ul class="servicio-features">
+                        <li><i class="fas fa-check"></i> Google My Business optimizado</li>
+                        <li><i class="fas fa-check"></i> Reseñas y reputación</li>
+                        <li><i class="fas fa-check"></i> Palabras clave locales</li>
+                    </ul>
+                </div>
 
-                <article class="blog-card">
-                    <img src="https://images.pexels.com/photos/3862632/pexels-photo-3862632.jpeg?w=400&h=250&auto=compress" alt="Palabras clave">
-                    <div class="blog-content">
-                        <span class="blog-date">22 Nov 2024</span>
-                        <h3>Keyword Research: Guía Completa</h3>
-                        <p>Domina la investigación de palabras clave y descubre las oportunidades ocultas que tu competencia no ve.</p>
-                        <a href="blog/keyword-research.html" class="btn-read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                <!-- SEO Nacional (Destacado) -->
+                <div class="servicio-detallado-card highlighted">
+                    <div class="badge">Más Popular</div>
+                    <div class="card-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: #fff;">
+                        <i class="fas fa-globe"></i>
                     </div>
-                </article>
+                    <h3>SEO Nacional</h3>
+                    <p>Domina las búsquedas en toda España. Ideal para ecommerce y servicios online que quieren escalar.</p>
+                    <ul class="servicio-features">
+                        <li><i class="fas fa-check"></i> Estrategia de contenido</li>
+                        <li><i class="fas fa-check"></i> Optimización on-page</li>
+                        <li><i class="fas fa-check"></i> Link building de calidad</li>
+                    </ul>
+                </div>
 
-                <article class="blog-card">
-                    <img src="https://images.pexels.com/photos/3182827/pexels-photo-3182827.jpeg?w=400&h=250&auto=compress" alt="Velocidad web">
-                    <div class="blog-content">
-                        <span class="blog-date">20 Nov 2024</span>
-                        <h3>Core Web Vitals: Optimización Esencial</h3>
-                        <p>Entiende y optimiza los Core Web Vitals para mejorar la experiencia del usuario y el posicionamiento en Google.</p>
-                        <a href="blog/core-web-vitals.html" class="btn-read-more">Leer más <i class="fas fa-arrow-right"></i></a>
-                    </article>
-
-                <article class="blog-card">
-                    <img src="https://images.pexels.com/photos/3184654/pexels-photo-3184654.jpeg?w=400&h=250&auto=compress" alt="Link building">
-                    <div class="blog-content">
-                        <span class="blog-date">18 Nov 2024</span>
-                        <h3>Link Building: Construye Autoridad</h3>
-                        <p>Estrategias efectivas para conseguir enlaces de calidad y fortalecer la autoridad de tu dominio.</p>
-                        <a href="blog/link-building.html" class="btn-read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                <!-- SEO Técnico -->
+                <div class="servicio-detallado-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: #fff;">
+                        <i class="fas fa-code"></i>
                     </div>
-                </article>
+                    <h3>SEO Técnico</h3>
+                    <p>Optimizamos la velocidad y estructura de tu web para que Google la ame. Core Web Vitals perfectos.</p>
+                    <ul class="servicio-features">
+                        <li><i class="fas fa-check"></i> Velocidad de carga</li>
+                        <li><i class="fas fa-check"></i> Schema markup</li>
+                        <li><i class="fas fa-check"></i> Indexación avanzada</li>
+                    </ul>
+                </div>
 
-                <article class="blog-card">
-                    <img src="https://images.pexels.com/photos/3808517/pexels-photo-3808517.jpeg?w=400&h=250&auto=compress" alt="Content marketing">
-                    <div class="blog-content">
-                        <span class="blog-date">16 Nov 2024</span>
-                        <h3>SEO Local para El Baix</h3>
-                        <p>Domina el posicionamiento local y atrae clientes de tu área con estas estrategias probadas en El Baix.</p>
-                        <a href="blog/seo-local-baix.html" class="btn-read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                <!-- Link Building -->
+                <div class="servicio-detallado-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: #fff;">
+                        <i class="fas fa-link"></i>
                     </div>
-                </article>
+                    <h3>Link Building</h3>
+                    <p>Enlaces de calidad que Google valora. Aumentamos tu autoridad de dominio de forma natural.</p>
+                    <ul class="servicio-features">
+                        <li><i class="fas fa-check"></i> Backlinks de calidad</li>
+                        <li><i class="fas fa-check"></i> Guest posting</li>
+                        <li><i class="fas fa-check"></i> Estrategia White Hat</li>
+                    </ul>
+                </div>
 
-                <article class="blog-card">
-                    <img src="https://images.pexels.com/photos/3862364/pexels-photo-3862364.jpeg?w=400&h=250&auto=compress" alt="Google Analytics">
-                    <div class="blog-content">
-                        <span class="blog-date">14 Nov 2024</span>
-                        <h3>Errores SEO Comunes: Cómo Evitarlos</h3>
-                        <p>Descubre los 10 errores más graves que destruyen el posicionamiento y cómo corregillos.</p>
-                        <a href="blog/errores-seo.html" class="btn-read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                <!-- Contenido SEO -->
+                <div class="servicio-detallado-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #fff;">
+                        <i class="fas fa-pen-fancy"></i>
                     </div>
-                </article>
-            </div>
+                    <h3>Contenido SEO</h3>
+                    <p>Artículos optimizados que posicionan y convierten. Contenido que vende y que Google rankea.</p>
+                    <ul class="servicio-features">
+                        <li><i class="fas fa-check"></i> Redacción especializada</li>
+                        <li><i class="fas fa-check"></i> Keywords research</li>
+                        <li><i class="fas fa-check"></i> Blog corporativo</li>
+                    </ul>
+                </div>
 
-            <div class="blog-footer">
-                <a href="#" class="btn btn-primary">Ver Todos los Artículos</a>
+                <!-- Analítica & Reportes -->
+                <div class="servicio-detallado-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #fccb90 0%, #d57eeb 100%); color: #fff;">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Analítica & Reportes</h3>
+                    <p>Informes mensuales con métricas reales. Transparencia total en cada acción y resultado.</p>
+                    <ul class="servicio-features">
+                        <li><i class="fas fa-check"></i> Dashboards personalizados</li>
+                        <li><i class="fas fa-check"></i> Informes mensuales</li>
+                        <li><i class="fas fa-check"></i> Acceso a herramientas</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
