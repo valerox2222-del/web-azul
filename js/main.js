@@ -329,42 +329,6 @@ console.log('✨ SEO Para El Baix - Animaciones cargadas correctamente');
 // EFECTOS PREMIUM ADICIONALES
 // ========================================
 
-// Cursor con rastro de partículas (solo desktop)
-if (window.innerWidth > 768) {
-    const cursorTrail = [];
-    const maxTrailLength = 10;
-
-    document.addEventListener('mousemove', (e) => {
-        const trail = document.createElement('div');
-        trail.style.cssText = `
-            position: fixed;
-            width: 4px;
-            height: 4px;
-            background: rgba(0, 212, 255, 0.6);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9997;
-            left: ${e.clientX}px;
-            top: ${e.clientY}px;
-            transform: translate(-50%, -50%);
-            transition: opacity 0.5s;
-        `;
-        document.body.appendChild(trail);
-
-        cursorTrail.push(trail);
-
-        if (cursorTrail.length > maxTrailLength) {
-            const oldTrail = cursorTrail.shift();
-            oldTrail.style.opacity = '0';
-            setTimeout(() => oldTrail.remove(), 500);
-        }
-
-        setTimeout(() => {
-            trail.style.opacity = '0';
-        }, 300);
-    });
-}
-
 // Efecto glitch en títulos al pasar el mouse
 document.querySelectorAll('h2').forEach(title => {
     let glitchInterval;
