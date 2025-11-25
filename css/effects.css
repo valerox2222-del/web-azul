@@ -1,0 +1,256 @@
+/* ========================================
+   EFECTOS PREMIUM ADICIONALES
+   ======================================== */
+
+/* Glassmorphism en tarjetas */
+.servicio-card {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Gradiente animado en hero */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(0, 212, 255, 0.1), 
+        rgba(0, 153, 204, 0.1), 
+        rgba(255, 107, 107, 0.1),
+        rgba(0, 212, 255, 0.1));
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    z-index: 0;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animaciones de entrada con scroll */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto ripple en botones */
+.btn {
+    position: relative;
+    overflow: hidden !important;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Mejoras en hover 3D */
+.servicio-card,
+.blog-card,
+.info-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transform-style: preserve-3d;
+}
+
+.servicio-card:hover,
+.blog-card:hover,
+.info-card:hover {
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.2),
+        0 0 40px rgba(0, 212, 255, 0.1) !important;
+}
+
+/* Efecto de brillo al pasar el mouse */
+.servicio-card::after,
+.blog-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(0, 212, 255, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+.servicio-card:hover::after,
+.blog-card:hover::after {
+    opacity: 1;
+    animation: shine 1.5s ease-in-out;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Animación de pulso para elementos destacados */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 20px rgba(0, 212, 255, 0);
+    }
+}
+
+.btn-primary:hover {
+    animation: pulse 2s infinite;
+}
+
+/* Efecto de texto brillante */
+.hero-content h1 {
+    background: linear-gradient(
+        90deg,
+        #fff,
+        #00d4ff,
+        #fff,
+        #00d4ff
+    ) !important;
+    background-size: 200% auto !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    animation: textShine 3s linear infinite;
+}
+
+@keyframes textShine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* Partículas decorativas */
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: 
+        radial-gradient(circle, rgba(0, 212, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.3;
+    animation: particleFloat 20s linear infinite;
+}
+
+@keyframes particleFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100px); }
+}
+
+/* Sombras de colores dinámicas */
+.servicio-icon {
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3) !important;
+    }
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+        box-shadow: 0 20px 40px rgba(0, 212, 255, 0.5) !important;
+    }
+}
+
+/* Efecto de escala suave en imágenes */
+.blog-card img,
+.sobre-imagen img {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.blog-card:hover img,
+.sobre-imagen:hover img {
+    transform: scale(1.05);
+}
+
+/* Líneas decorativas animadas */
+h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #00d4ff, #0099cc);
+    margin: 1rem auto;
+    border-radius: 2px;
+    animation: lineExpand 2s ease-in-out infinite;
+}
+
+@keyframes lineExpand {
+    0%, 100% { width: 100px; }
+    50% { width: 150px; }
+}
+
+/* Efecto de desenfoque al hacer scroll */
+.header.scrolled {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(15, 20, 25, 0.9) !important;
+}
+
+/* Animación para stats */
+.stat {
+    animation: statFloat 4s ease-in-out infinite;
+}
+
+.stat:nth-child(1) { animation-delay: 0s; }
+.stat:nth-child(2) { animation-delay: 0.2s; }
+.stat:nth-child(3) { animation-delay: 0.4s; }
+.stat:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes statFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Mejorar responsividad en móvil */
+@media (max-width: 768px) {
+    /* Desactivar efectos pesados en móvil */
+    .hero::before,
+    .hero::after {
+        animation: none !important;
+    }
+    
+    .servicio-icon {
+        animation: none !important;
+    }
+    
+    body {
+        cursor: auto !important;
+    }
+}
